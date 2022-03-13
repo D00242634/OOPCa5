@@ -32,6 +32,21 @@ public class Necklace extends Jewellery {
     ///////////////////////////END
     
     
+        public boolean equals(Jewellery other) {
+        return this.getPrice() == other.getPrice();
+    }
+
+    public int compareTo(Jewellery other) {
+
+        if (this.equals(other)) {
+            return 0;
+        } else if (getPrice() > other.getPrice()) {
+            return 1;
+        } else {
+            return -1;
+        }
+
+    }
     
     ///////////////////////////START
 

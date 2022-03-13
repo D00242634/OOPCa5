@@ -31,6 +31,8 @@ public class Main {
     private void displayMainMenu() throws IOException {
         final int JewelleryArrayList = 1;
         final int JewelleryHashMap = 2;
+        final int JewelleryTree = 3;
+        final int PriorityQueue = 4;
         final int Exit = 9;
         Scanner keyboard = new Scanner(System.in);
         int option = 0;
@@ -38,7 +40,7 @@ public class Main {
             System.out.println("\n##################################");
             System.out.println("        Jewellery Shop");
             System.out.println("##################################");
-            System.out.println("(1)JewelleryArrayList\n(2)JewelleryHashMap\n(9)Exit");
+            System.out.println("(1)JewelleryArrayList\n(2)JewelleryHashMap\n(3)JewelleryTreeMap\n(4)PriorityQueue\n(9)Exit");
             System.out.print("\nYour Choice: ");
 
             try {
@@ -57,6 +59,17 @@ public class Main {
                         Scanner sc = new Scanner(System.in);
                         int chooseHashMapEntry = sc.nextInt();
                         JewelleryManager.ApplyJewelleryToHashMap(chooseHashMapEntry);
+                        break;
+
+                    case JewelleryTree:
+                        System.out.println("Jewellery TreeMap chosen");
+                        System.out.println("\n printing tree map");
+                        JewelleryManager.ApplyJewelleryToTreeMap();
+                        break;
+
+                    case PriorityQueue:
+                        System.out.println("Jewellery PriorityQueue chosen");
+                        JewelleryManager.JewelleryPriorityQueue();
                         break;
 
                     case Exit:
@@ -115,3 +128,4 @@ public class Main {
     }
 
 }
+

@@ -3,7 +3,9 @@ package ca5.d00242634;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class JewelleryManager {
 
@@ -73,15 +75,54 @@ public class JewelleryManager {
 
     }
 
-    public ca5.d00242634.Jewellery addJewellery(ca5.d00242634.Jewellery newV) {
-
+    
+        public void ApplyJewelleryToTreeMap() {
+        TreeMap<Integer, Jewellery> treemap = new TreeMap<>();
+        int i = 0;
         for (ca5.d00242634.Jewellery v : JewelleryList) {
-            if (v.equals(newV)) {
-                return null;
-            }
+            i++;
+            treemap.put(i, v);
         }
-        JewelleryList.add(newV);
-        return newV;
+            for (Map.Entry<Integer, Jewellery> map :
+             treemap.entrySet())
+  
+            System.out.println(map.getKey() + " "
+                               + map.getValue());
+    
+    }
+
+    public void JewelleryPriorityQueue() {
+        PriorityQueue<Jewellery> pQueue = new PriorityQueue<>();
+
+        Ring ring1 = new Ring(12.88, "gold  ", true, 12);
+        pQueue.add(ring1);
+        Ring ring2 = new Ring(8.88, "silver", false, 13);
+        pQueue.add(ring2);
+//        Ring ring3 = new Ring(6.22, "gold  ", true, 5);
+//        pQueue.add(ring3);
+//        Ring ring4 = new Ring(3.77, "silver", true, 6.5);
+//        pQueue.add(ring4);
+//        Ring ring5 = new Ring(8.999, "gold  ", true, 3.2);
+//        pQueue.add(ring5);
+//        Necklace neck1 = new Necklace(12.88, "gold  ", true, 12, 25);
+//        pQueue.add(neck1);
+//        Necklace neck2 = new Necklace(625.5, "diamond  ", false, 13, 5);
+//        pQueue.add(neck2);
+//        Earring ear1 = new Earring(12.88, "gold  ", true, "Lobe", "Round");
+//        pQueue.add(ear1);
+//        Earring ear2 = new Earring(13.50, "silver  ", true, "Lobe", "Cone");
+//        pQueue.add(ear2);
+//        Earring ear3 = new Earring(75.33, "diamond  ", true, "rook", "Round");
+//        pQueue.add(ear3);
+
+
+        
+        int count = 1;
+        
+        while(!pQueue.isEmpty()){
+            System.out.println("Dequed "+ count + " --> "+ pQueue.remove());
+       }
+        
     }
 
 }

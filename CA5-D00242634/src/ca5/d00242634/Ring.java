@@ -20,6 +20,10 @@ public class Ring extends Jewellery {
     }
     ///////////////////////////END
     
+        public boolean equals(Jewellery other) {
+        return this.getPrice() == other.getPrice();
+    }
+
     
     
     ///////////////////////////START

@@ -29,27 +29,39 @@ public abstract class Jewellery {
     {
         this.price = price;
     }
-    
-    public String getMaterials()
-    {
+
+    public String getMaterials() {
         return materials;
     }
-    public void setMaterials(String materials)
-    {
+
+    public void setMaterials(String materials) {
         this.materials = materials;
     }
-    
-    public boolean getAvailable()
-    {
+
+    public boolean getAvailable() {
         return available;
     }
-    public void setAvailable(boolean available)
-    {
+
+    public void setAvailable(boolean available) {
         this.available = available;
     }
     ///////////////////////////END
-    
-    
+
+    public boolean equals(Jewellery other) {
+        return this.getPrice() == other.getPrice();
+    }
+
+    public int compareTo (Jewellery other) {
+
+        if (this.equals(other)) {
+            return 0;
+        } else if (getPrice() > other.getPrice()) {
+            return 1;
+        } else {
+            return -1;
+        }
+
+    }
     
     ///////////////////////////START
     @Override
