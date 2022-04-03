@@ -25,7 +25,7 @@ public class MySqlRingDao extends MySqlDao implements RingDaoInterface
         {
             connection = this.getConnection();
 
-            String query = "SELECT * FROM USER";
+            String query = "SELECT * FROM Ring";
             ps = connection.prepareStatement(query);
 
             resultSet = ps.executeQuery();
